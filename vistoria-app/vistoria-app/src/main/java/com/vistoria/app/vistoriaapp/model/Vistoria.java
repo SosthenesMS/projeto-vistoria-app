@@ -1,9 +1,7 @@
 package com.vistoria.app.vistoriaapp.model;
 
 import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity(name = "vistoria")
 public class Vistoria {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idVistoria;
@@ -69,5 +67,5 @@ public class Vistoria {
     @OneToOne
     @JoinColumn(name = "idStatusVistoria")
     private StatusVistoria statusVistoria;
-    
+
 }

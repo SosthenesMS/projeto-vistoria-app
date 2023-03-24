@@ -1,7 +1,5 @@
 package com.vistoria.app.vistoriaapp.model;
 
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,11 +17,11 @@ import jakarta.persistence.Id;
 @NoArgsConstructor
 @Entity(name = "agenteVistoriador")
 public class AgenteVistoriador {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAgenteVistoriador;
-    
+
     @Column(name = "nome", nullable = false, unique = true, length = 45)
     private String nome;
 
