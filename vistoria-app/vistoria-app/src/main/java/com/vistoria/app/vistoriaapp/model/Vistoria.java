@@ -24,7 +24,7 @@ public class Vistoria {
     private int idVistoria;
 
     @Column(name = "dataDaVistoria", nullable = false)
-    @JsonFormat(pattern = "dd/MM/yy")
+    @JsonFormat(pattern = "dd/MM/yyy")
     private LocalDate dataDaVistoria;
 
     @Column(name = "motorista", nullable = false, length = 45)
