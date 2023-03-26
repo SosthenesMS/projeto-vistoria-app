@@ -1,5 +1,6 @@
 package com.vistoria.app.vistoriaapp.controller;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -67,6 +68,23 @@ public class VistoriaController {
     public ResponseEntity<String> deletarVistoria(@PathVariable("id") int id) {
         vistoriaRepository.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).body("Relatório de vistoria deletado com sucesso!");
+    }
+
+    @GetMapping(value = "/aprovadas")
+    public ResponseEntity<List<Vistoria>> listarVistoriasAprovadas() {
+        return ResponseEntity.status(HttpStatus.OK).body(vistoriaRepository.findByidVistoriaAprovada());
+    }
+
+    @GetMapping(value = "/reprovadas")
+    public ResponseEntity<List<Vistoria>> listarVistoriasReprovadas() {
+        return ResponseEntity.status(HttpStatus.OK).body(vistoriaRepository.findByidVistoriaReprovada());
+    }
+
+    @GetMapping(value = "/vistoriadores/{idAgenteVistoriador}")
+    public ResponseEntity<List<Vistoria>> listarVistoriasReprovadas(
+            @PathVariable("idAgenteVistoriador") int idAgenteVistoriador) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vistoriaRepository.findByidAgenteVistoriador(idAgenteVistoriador));
     }
 
     @Autowired
