@@ -1,11 +1,13 @@
 package com.vistoria.app.vistoriaapp.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.vistoria.app.vistoriaapp.model.Vistoria;
 import com.vistoria.app.vistoriaapp.repository.VistoriaRepository;
+import com.vistoria.app.vistoriaapp.service.VistoriaService;
 
 @RestController
 @RequestMapping(value = "/vistorias")
@@ -92,7 +95,7 @@ public class VistoriaController {
             @PathVariable("remessa") String remessa) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(vistoriaRepository.findByNumeroDaRemessa(remessa));
-    }    
+    }
 
     @GetMapping(value = "/transportadores/{transportador}")
     public ResponseEntity<List<Vistoria>> listarVistoriasPeloTransportador(
@@ -108,7 +111,17 @@ public class VistoriaController {
                 .body(vistoriaRepository.findByCpfMotorista(cpf));
     }
 
+    @GetMapping(value = "/vistoriaspordata")
+    public ResponseEntity<List<Vistoria>> listarVistoriasPeloIntervaloDeData(
+            @RequestParam("dataInicial") @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dataInicial,
+            @RequestParam("dataFinal") @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dataFinal) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vistoriaService.obterVistoriasPeloIntervaloDeData(dataInicial, dataFinal));
+    }
 
     @Autowired
     private VistoriaRepository vistoriaRepository;
+
+    @Autowired
+    private VistoriaService vistoriaService;
 }

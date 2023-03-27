@@ -1,10 +1,13 @@
 package com.vistoria.app.vistoriaapp.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
 import com.vistoria.app.vistoriaapp.model.Vistoria;
 
 public interface VistoriaRepository extends JpaRepository<Vistoria, Integer> {
@@ -29,4 +32,7 @@ public interface VistoriaRepository extends JpaRepository<Vistoria, Integer> {
     @Query(value = "SELECT * FROM vistoria WHERE cpf = :cpf", nativeQuery = true)
     List<Vistoria> findByCpfMotorista(String cpf);
 
+    //Localizar vistorias em um determinado intervalo de tempo
+    @Query(value = "SELECT * FROM vistoria WHERE dataDaVistoria BETWEEN :dataInicial AND :dataFinal", nativeQuery = true)
+    List<Vistoria> findByIntervaloDeData(@Param("dataInicial") LocalDate dataInicial, @Param("dataFinal") LocalDate dataFinal);
 }
