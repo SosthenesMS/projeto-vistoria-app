@@ -81,11 +81,33 @@ public class VistoriaController {
     }
 
     @GetMapping(value = "/vistoriadores/{idAgenteVistoriador}")
-    public ResponseEntity<List<Vistoria>> listarVistoriasReprovadas(
+    public ResponseEntity<List<Vistoria>> listarVistoriasPeloIdDoVistoriador(
             @PathVariable("idAgenteVistoriador") int idAgenteVistoriador) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(vistoriaRepository.findByidAgenteVistoriador(idAgenteVistoriador));
     }
+
+    @GetMapping(value = "/remessas/{remessa}")
+    public ResponseEntity<List<Vistoria>> listarVistoriasPeloNumeroDaRemessa(
+            @PathVariable("remessa") String remessa) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vistoriaRepository.findByNumeroDaRemessa(remessa));
+    }    
+
+    @GetMapping(value = "/transportadores/{transportador}")
+    public ResponseEntity<List<Vistoria>> listarVistoriasPeloTransportador(
+            @PathVariable("transportador") String transportador) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vistoriaRepository.findByTransportador(transportador));
+    }
+
+    @GetMapping(value = "/cpfs/{cpf}")
+    public ResponseEntity<List<Vistoria>> listarVistoriasPeloMotorista(
+            @PathVariable("cpf") String cpf) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(vistoriaRepository.findByCpfMotorista(cpf));
+    }
+
 
     @Autowired
     private VistoriaRepository vistoriaRepository;

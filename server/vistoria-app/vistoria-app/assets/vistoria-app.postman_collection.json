@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "87534163-c150-4d8a-ba8c-e7791cfb10f6",
+		"name": "Vistoria App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26052850"
+	},
+	"item": [
+		{
+			"name": "Agente Vistoriador",
+			"item": [
+				{
+					"name": "Obter Todos Os Agentes Vistoriadores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agentes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obeter Agente Vistoriador Pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agentes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agentes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Agente Vistoriador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Alex\",\r\n    \"sobrenome\":\"Silva\",\r\n    \"email\":\"alex@mdb.com\",\r\n    \"matricula\":\"Pil12352\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/agentes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Agente Vistoriador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAgenteVistoriador\": 1,\r\n    \"nome\": \"Vinicius\",\r\n    \"sobrenome\": \"Rodrigues\",\r\n    \"email\": \"vini@mdb.com\",\r\n    \"matricula\": \"vit0001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/agentes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Agente Vistoriador",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/agentes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"agentes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status Vistoria",
+			"item": [
+				{
+					"name": "Obter Todos os Status de Vistorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/status/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status",
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Statud de Vistoria pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/status/vistorias/listar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status",
+								"vistorias",
+								"listar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Status de Vistoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\":\"Aprovado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/status/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status",
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar o Status da Vistoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idStatusVistoria\": 1,\r\n    \"descricao\": \"Regex\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/status/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status",
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Status de Vistoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/status/vistorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"status",
+								"vistorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vistoria",
+			"item": [
+				{
+					"name": "Obter Vistorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistoria pelo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Aprovadas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/aprovadas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"aprovadas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Reprovadas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/reprovadas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"reprovadas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Pelo ID do Vistoriador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/vistoriadores/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"vistoriadores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Pelo CPF do Motorista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/motoristas/11111111111",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"motoristas",
+								"11111111111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Pelo Nome do Transportador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/transportadores/setag",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"transportadores",
+								"setag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Vistorias Pelo Numero da Carga",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/remessas/0000000300",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"remessas",
+								"0000000300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Nova Vistoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataDaVistoria\":\"20/03/2023\",\r\n    \"motorista\":\"Adriano\",\r\n    \"cpf\":\"1212121212\",\r\n    \"turno\":\"Noite\",\r\n    \"perfilDaCarga\":\"Paletizado\",\r\n    \"perfilDoVeiculo\":\"Carreta\",\r\n    \"placaDoCavalo\":\"klk3515\",\r\n    \"placaDaCarreta\":\"klj3524\",\r\n    \"remessa\":\"000123421\",\r\n    \"transportador\":\"Setag\",\r\n    \"destinoDaCarga\":\"Natal\",\r\n    \"observacoes\":\"Sem informacoes\",\r\n    \"agenteVistoriador\":{\r\n        \"idAgenteVistoriador\": 1\r\n    },\r\n    \"statusVistoria\":{\r\n        \"idStatusVistoria\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Vistoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Vistoria pelo ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vistorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vistorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
