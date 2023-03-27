@@ -20,4 +20,13 @@ public interface VistoriaRepository extends JpaRepository<Vistoria, Integer> {
     @Query(value = "SELECT * FROM vistoria WHERE idAgenteVistoriador = :idAgenteVistoriador", nativeQuery = true)
     List<Vistoria> findByidAgenteVistoriador(int idAgenteVistoriador);
 
+    @Query(value = "SELECT * FROM vistoria WHERE remessa = :remessa", nativeQuery = true)
+    List<Vistoria> findByNumeroDaRemessa(String remessa);
+
+    @Query(value = "SELECT * FROM vistoria WHERE transportador = :transportador", nativeQuery = true)
+    List<Vistoria> findByTransportador(String transportador);
+
+    @Query(value = "SELECT * FROM vistoria WHERE cpf = :cpf", nativeQuery = true)
+    List<Vistoria> findByCpfMotorista(String cpf);
+
 }
