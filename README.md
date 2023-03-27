@@ -1,6 +1,6 @@
 </br>
 <div align="center">
-  <img src="vistoria-app/vistoria-app/assets/tela-inicial-vistoriaApp.png" width="60%" />
+  <img src="server/vistoria-app/vistoria-app/assets/tela-inicial-vistoriaApp.png" width="60%" />
 </div>
 </br>
 
@@ -11,7 +11,7 @@
 <h2>Diagrama de Classes</h2>
 </br>
 <div align="center">
-  <img src="vistoria-app/vistoria-app/assets/diagrama-de-classes-vistoriaApp.png" width="45%" />
+  <img src="server/vistoria-app/vistoria-app/assets/diagrama-de-classes-vistoriaApp.png" width="45%" />
 </div>
 
 
